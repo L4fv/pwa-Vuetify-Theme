@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <title>Seikers | Contratistas Generales</title>
+  <meta name="description" content="Es una empresa peruana dedicada a la Industria de la Construcción. Hacemos realidad los proyectos de construcción para la pequeña, mediana y grandes empresas.
+  Nuestro objetivo es, construir obras de infraestructura que contribuyan de un modo eficiente y seguro al bienestar de las personas y al mejoramiento del entorno y la calidad total en todos los servicios que se ofrece, buscando ante todo la plena satisfacción del cliente y el fiel cumplimiento de todos los compromisos.">
+  <meta name="keywords" content="drywall, construcción, diseño, acabados, albañil, maestro de obra, enchapado, gasfiteria, electricidad, aceros inoxidables, presupuesto, mayolica, techos">
+  <!-- facebook share -->
+  <meta property="fb:app_id" content="207490119824692">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Seikers | Contratistas Generales">
+  <meta property="og:description" content="Es una empresa peruana dedicada a la Industria de la Construcción. Hacemos realidad los proyectos de construcción para la pequeña, mediana y grandes empresas.
+
+  Nuestro objetivo es, construir obras de infraestructura que contribuyan de un modo eficiente y seguro al bienestar de las personas y al mejoramiento del entorno y la calidad total en todos los servicios que se ofrece, buscando ante todo la plena satisfacción del cliente y el fiel cumplimiento de todos los compromisos.">
+  <meta property="og:image" content="https://seikers.com/static/images/icons/android-icon-192x192.png">
+  <!-- fonts -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="<%= htmlWebpackPlugin.files.publicPath %>static/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<%= htmlWebpackPlugin.files.publicPath %>static/images/icons/favicon-16x16.png">
+    <!--[if IE]><link rel="shortcut icon" href="/static/images/icons/favicon.ico"><![endif]-->
+    <!-- Add to home screen for Android and modern mobile browsers -->
+    <link rel="manifest" href="<%= htmlWebpackPlugin.files.publicPath %>static/manifest.json">
+    <meta name="theme-color" content="#424242">
+
+    <!-- Add to home screen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="v0.1.1">
+    <link rel="apple-touch-icon" href="<%= htmlWebpackPlugin.files.publicPath %>static/images/icons/apple-icon-152x152.png">
+    <!-- Add to home screen for Windows -->
+    <meta name="msapplication-TileImage" content="<%= htmlWebpackPlugin.files.publicPath %>static/images/icons/ms-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    <% for (var chunk of webpack.chunks) {
+        for (var file of chunk.files) {
+          if (file.match(/\.(js|css)$/)) { %>
+    <link rel="<%= chunk.initial?'preload':'prefetch' %>" href="<%= htmlWebpackPlugin.files.publicPath + file %>" as="<%= file.match(/\.css$/)?'style':'script' %>"><% }}} %>
+  </head>
+  <body>
+    <noscript>
+      This is your fallback content in case JavaScript fails to load.
+    </noscript>
+    <div id="app"></div>
+    <!-- Todo: only include in production -->
+    <%= htmlWebpackPlugin.options.serviceWorkerLoader %>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
